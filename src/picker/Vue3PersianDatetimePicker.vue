@@ -1029,7 +1029,7 @@ export default {
         this.hasStep('d') &&
         this.minDate &&
         this.minDate.clone().xStartOf('month') >=
-        this.date.clone().xStartOf('month')
+          this.date.clone().xStartOf('month')
       )
     },
     nextMonthDisabled() {
@@ -1037,7 +1037,7 @@ export default {
         this.hasStep('d') &&
         this.maxDate &&
         this.maxDate.clone().xStartOf('month') <=
-        this.date.clone().xStartOf('month')
+          this.date.clone().xStartOf('month')
       )
     },
     canGoToday() {
