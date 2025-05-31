@@ -1,5 +1,5 @@
 {
-  "name": "vue3-persian-datetime-picker-custom",
+  "name": "@nikan2010/vue3-persian-datetime-picker-custom",
   "version": "1.0.0",
   "description": "Custom version of vue3-persian-datetime-picker with keyboard support",
   "main": "src/picker/Vue3PersianDatetimePicker.vue",
