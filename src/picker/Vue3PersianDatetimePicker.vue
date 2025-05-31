@@ -1029,7 +1029,7 @@ export default {
         this.hasStep('d') &&
         this.minDate &&
         this.minDate.clone().xStartOf('month') >=
-          this.date.clone().xStartOf('month')
+        this.date.clone().xStartOf('month')
       )
     },
     nextMonthDisabled() {
@@ -1037,7 +1037,7 @@ export default {
         this.hasStep('d') &&
         this.maxDate &&
         this.maxDate.clone().xStartOf('month') <=
-          this.date.clone().xStartOf('month')
+        this.date.clone().xStartOf('month')
       )
     },
     canGoToday() {
@@ -1316,6 +1316,35 @@ export default {
     }
   },
   methods: {
+
+    handleEnter() {
+      if (this.selectedDate) {
+        this.selectDate(this.selectedDate)
+        this.isOpen = false
+      }
+    },
+    handleEsc() {
+      this.isOpen = false
+    },
+    handleArrow(dir) {
+      let newDate = new Date(this.selectedDate || new Date())
+      switch (dir) {
+        case 'left':
+          newDate.setDate(newDate.getDate() - 1)
+          break
+        case 'right':
+          newDate.setDate(newDate.getDate() + 1)
+          break
+        case 'up':
+          newDate.setDate(newDate.getDate() - 7)
+          break
+        case 'down':
+          newDate.setDate(newDate.getDate() + 7)
+          break
+      }
+      this.selectedDate = newDate
+    },
+
     nextStep(fromStep) {
       const checkAndSubmit = () => {
         let minLengthToSubmit = this.range ? 2 : this.multiple ? 0 : 1
